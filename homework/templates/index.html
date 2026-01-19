@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block home %}
+Главная страница
+{% endblock %}
+
+{% block body%}
+<h2>Страница, с которой начинается все</h2>
+{% with messages = get_flashed_messages(with_categories = true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+            <div class = "alert alert-{{category}}" id="flashMessage">
+                {{message}}
+                <button onclick="document.getElementById('flashMessage').remove()">×</button>
+            </div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+    <form method="POST" action="/about">
+        <label>Введите данные<input type="text" name="data"></label><br><br>
+            <button type="submit" class="btn-submit">Отправить</button>
+    </form>
+    <form method = 'GET' action="/about">
+        <button type="submit" class="btn-submit">Получить все данные</button>
+    </form>>
+{% endblock%}

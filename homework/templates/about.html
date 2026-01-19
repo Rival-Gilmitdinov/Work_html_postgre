@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block home %}
+Страница с описанием данных
+{% endblock %}
+
+
+{% block body%}
+<h2>Таблица данных из Postgresql</h2>
+{{table|safe}}
+<form method = 'GET' action = '/'>
+    <button type='submit' class="btn-submit">Назад</button>
+</form>
+{% endblock %}
