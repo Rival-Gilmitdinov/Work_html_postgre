@@ -1,6 +1,6 @@
 from sqlalchemy import create_engine, MetaData, select, Column, Integer, String, inspect
 import psycopg2
-from CONFIG import user,password,host,port,db
+from CONFIG import user,password,host, port, db
 from sqlalchemy.orm import declarative_base, relationship, Session
 import pandas as pd
 
@@ -50,3 +50,5 @@ def create_table():
 
 
 data = Data()
+
+
