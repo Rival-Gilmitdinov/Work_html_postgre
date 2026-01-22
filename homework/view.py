@@ -1,7 +1,7 @@
 from flask import Flask, request, render_template, flash
 import psycopg2
 import requests
-from controller import Data, add, create_table
+from model import Data, add, create_table
 
 app = Flask(__name__)
 app.secret_key = 'secret'
@@ -13,7 +13,7 @@ def dsf():
 
 @app.route('/', methods=['GET', 'POST'])
 def hello():
-    return render_template('index.html')5
+    return render_template('index.html')
 
 
 @app.route('/about', methods=['GET', 'POST'])
