@@ -28,6 +28,7 @@ def add(text):
         session.add(value)
         session.commit()
 
+
 def conn(table):
     """Функция по выборке значений из таблицы
     Return: results.fetchall() - список данных из postgresql"""
