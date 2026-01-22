@@ -19,13 +19,13 @@ inspector = inspect(engine)
 if not inspector.has_table('data_of_html'):
     Base.metadata.create_all(bind=engine)
 
+
 def add(text):
      with Session(engine) as session:
 
         value = Data(text=f'{text}')
         session.add(value)
         session.commit()
-
 
 def conn(table):
     metadata = MetaData()
